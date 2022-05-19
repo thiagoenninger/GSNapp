@@ -19,14 +19,14 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.containerLogo}>
-          <Text style={{ fontSize: 18, fontWeight: "900", color: "#fff" }}>
-            Logo
+          <Text style={{ fontSize: 22, fontWeight: "900", color: "#fff" }}>
+            LOGO
           </Text>
         </View>
         <View style={styles.section}>
           <Image source={Mail} style={styles.imagemMail} />
           <TextInput
-            style={{ flex: 1, marginLeft: 10 }}
+            style={{ flex: 1, marginLeft: 15 }}
             placeholder="Email"
             underlineColorAndroid="transparent"
           />
@@ -34,7 +34,7 @@ export default class App extends React.Component {
         <View style={styles.section}>
           <Image source={Locker} style={styles.imagemLocker} />
           <TextInput
-            style={{ flex: 1, marginLeft: 10 }}
+            style={{ flex: 1, marginLeft: 15 }}
             placeholder="Senha"
             underlineColorAndroid="transparent"
           />
@@ -108,16 +108,16 @@ const styles = StyleSheet.create({
   },
   imagemMail: {
     padding: 10,
-    marginLeft: 10,
-    height: 22,
+    marginLeft: 15,
+    height: 32,
     width: 32,
     resizeMode: "stretch",
     alignItems: "center",
   },
   imagemLocker: {
     padding: 10,
-    marginLeft: 10,
-    height: 22,
+    marginLeft: 15,
+    height: 26,
     width: 32,
     resizeMode: "stretch",
     alignItems: "center",
