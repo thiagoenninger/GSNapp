@@ -4,7 +4,6 @@ import {
   Text,
   View,
   TextInput,
-  StatusBar,
   Image,
   Pressable,
 } from "react-native";
@@ -14,6 +13,7 @@ import Locker from "./assets/locker.png";
 import Gmail from "./assets/gmail.png";
 import Facebook from "./assets/facebook.png";
 import Twitter from "./assets/twitter.png";
+
 export default class App extends React.Component {
   render() {
     return (
