@@ -35,7 +35,7 @@ export default class CriarConta extends React.Component {
             </Text>
           </View>
         </View>
-        <View style={styles.section}>
+        <View style={styles.sectionConta}>
           <TextInput
             style={{ flex: 1, marginLeft: 15, fontSize: 18 }}
             placeholder="Email"
@@ -44,7 +44,7 @@ export default class CriarConta extends React.Component {
           <Image source={Mail2} style={styles.imagem} />
         </View>
 
-        <View style={styles.section}>
+        <View style={styles.sectionConta}>
           <TextInput
             style={{ flex: 1, marginLeft: 15, fontSize: 18 }}
             placeholder="Nome"
@@ -53,7 +53,7 @@ export default class CriarConta extends React.Component {
           <Image source={User} style={styles.imagem} />
         </View>
 
-        <View style={styles.section}>
+        <View style={styles.sectionConta}>
           <TextInput
             style={{ flex: 1, marginLeft: 15, fontSize: 18 }}
             placeholder="Sobrenome"
@@ -62,7 +62,7 @@ export default class CriarConta extends React.Component {
           <Image source={User2} style={styles.imagem} />
         </View>
 
-        <View style={styles.section}>
+        <View style={styles.sectionConta}>
           <TextInput
             style={{ flex: 1, marginLeft: 15, fontSize: 18 }}
             placeholder="Senha"
@@ -72,7 +72,7 @@ export default class CriarConta extends React.Component {
           <Image source={Senha} style={styles.imagem} />
         </View>
 
-        <View style={styles.section}>
+        <View style={styles.sectionConta}>
           <TextInput
             style={{ flex: 1, marginLeft: 15, fontSize: 18 }}
             placeholder="Confirmar Senha"
@@ -95,11 +95,6 @@ export default class CriarConta extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   header: {
     flexDirection: "row",
     justifyContent: "flex-start",
@@ -126,7 +121,7 @@ const styles = StyleSheet.create({
     width: 22,
     resizeMode: "stretch",
   },
-  section: {
+  sectionConta: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
