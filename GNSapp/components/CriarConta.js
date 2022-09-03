@@ -15,8 +15,7 @@ import Senha from "./assets/locker2.png";
 import ConfirmSenha from "./assets/locker2Aberto.png";
 import Arrow from "./assets/arrow.png";
 
-export default class CriarConta extends React.Component {
-  render() {
+const CriarConta = () => {
     return (
       <View style={styles.container}>
         <View
@@ -92,9 +91,15 @@ export default class CriarConta extends React.Component {
       </View>
     );
   }
-}
+
+  export default CriarConta;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   header: {
     flexDirection: "row",
     justifyContent: "flex-start",

@@ -1,7 +1,8 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StyleSheet,Text, View, TextInput, Image, Pressable, } from "react-native";
+import { StyleSheet,Text, View, TextInput, Image, Pressable, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import Mail from "./assets/mail.png";
 import Locker from "./assets/locker.png";
@@ -21,7 +22,7 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="CriarConta" component={CriarConta}/>
       </Stack.Navigator>
@@ -29,7 +30,8 @@ const App = () => {
   );
 };
 
-const Home = ({ navigation }) => {
+const Home = (props) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.containerLogo}>
@@ -92,7 +94,8 @@ const Home = ({ navigation }) => {
   );
 };
 
-const CriarConta = ({navigation, route}) => {
+const CriarConta = (props) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
         <View
@@ -159,10 +162,25 @@ const CriarConta = ({navigation, route}) => {
         </View>
         <Pressable
           style={styles.btnRegistro}
-          onPress={(_) => alert("Usuário registrado com sucesso!")}
+          onPress={() => navigation.navigate("Home")}
         >
           <Text style={{ fontSize: 20, fontWeight: "700", color: "#fff" }}>
             REGISTRAR
+          </Text>
+        </Pressable>
+        <Pressable
+          style={{
+            backgroundColor:"#9a9a9a",
+            width: 330,
+            height: 50,
+            borderRadius: 10,
+            marginTop: 30,
+            justifyContent: "center",
+            alignItems: "center"}}
+          onPress={() => navigation.navigate("Home")}
+        >
+          <Text style={{ fontSize: 20, fontWeight: "700", color: "#fff" }}>
+            CANCELAR
           </Text>
         </Pressable>
       </View>

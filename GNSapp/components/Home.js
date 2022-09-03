@@ -14,8 +14,7 @@ import Gmail from "./assets/gmail.png";
 import Facebook from "./assets/facebook.png";
 import Twitter from "./assets/twitter.png";
 
-export default class App extends React.Component {
-  render() {
+const Home = () => {
     return (
       <View style={styles.container}>
         <View style={styles.containerLogo}>
@@ -68,7 +67,7 @@ export default class App extends React.Component {
 
         <View style={styles.containerRegistro}>
           <Text style={{ fontSize: 18, marginRight: 10 }}>Novo no GSN?</Text>
-          <Pressable onPress={(_) => alert("Página em Construção")}>
+          <Pressable>
             <Text
               style={{ fontSize: 18, fontWeight: "bold", color: "#32a060" }}
             >
@@ -79,7 +78,8 @@ export default class App extends React.Component {
       </View>
     );
   }
-}
+
+  export default Home;
 
 const styles = StyleSheet.create({
   container: {
