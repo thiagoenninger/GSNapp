@@ -72,7 +72,7 @@ const Home = (props) => {
         >
           <Text style={styles.txtLogin}>LOGIN</Text>
         </Pressable>
-        <Text style={{color:"#fff", fontSize: 14, marginBottom: 30 }}>ou acesse com:</Text>
+        <Text style={{color:"#fff", fontSize: 14, marginBottom: 30, textShadowColor: "#000",textShadowOffset: {width: 1, height: 1},textShadowRadius: 3}}>ou acesse com:</Text>
         <View style={styles.containerMidiasSociais}>
           <Pressable onPress={(_) => alert("Página em Construção")}>
             <Image source={Gmail} style={styles.imagemMidias} />
@@ -88,7 +88,7 @@ const Home = (props) => {
         <View style={styles.containerRegistro}>
           <Text style={{ color:"#fff", fontSize: 18, marginRight: 10 }}>Novo no GSN?</Text>
           <Pressable onPress={() => navigation.navigate("CriarConta")}>
-            <Text style={{ fontSize: 18, fontWeight: "bold", color: "#32a060" }}>
+            <Text style={styles.registro}>
               Registre-se
             </Text>
           </Pressable>
@@ -234,6 +234,10 @@ const styles = StyleSheet.create({
     width: 130,
     height: 30,
     marginBottom: 30,
+    shadowColor: "#000",
+    shadowOffset: {width: 1, height: 1},
+    shadowRadius: 5,
+    shadowOpacity: 0.5,
   },
   txtEsqueciSenha: {
     color: "#fff",
@@ -248,6 +252,10 @@ const styles = StyleSheet.create({
     width: 260,
     height: 50,
     marginBottom: 30,
+    shadowColor: "#000",
+    shadowOffset: {width: 1, height: 1},
+    shadowRadius: 5,
+    shadowOpacity: 0.5,
   },
   txtLogin: {
     color: "#fff",
@@ -266,12 +274,21 @@ const styles = StyleSheet.create({
     width: 50,
     resizeMode: "stretch",
     alignItems: "center",
+    
   },
   containerRegistro: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },
+  registro: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#32a060",
+    textShadowColor: "#000",
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 3,
+  },  
   header: {
     flexDirection: "row",
     justifyContent: "flex-start",
