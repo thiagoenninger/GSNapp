@@ -1,8 +1,10 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StyleSheet,Text, View, TextInput, Image, Pressable, TouchableOpacity } from "react-native";
+import { StyleSheet,Text, View, TextInput, Image, Pressable, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+
+import Fundo from "./assets/fundo2.png";
 
 import Mail from "./assets/mail.png";
 import Locker from "./assets/locker.png";
@@ -33,64 +35,65 @@ const App = () => {
 const Home = (props) => {
   const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      <View style={styles.containerLogo}>
-        <Text style={{ fontSize: 22, fontWeight: "900", color: "#fff" }}>
-          LOGO
-        </Text>
-      </View>
-      <View style={styles.section}>
-        <Image source={Mail} style={styles.imagemMail} />
-        <TextInput
-          style={{ flex: 1, marginLeft: 15 }}
-          placeholder="Email"
-          underlineColorAndroid="transparent"
-        />
-      </View>
-      <View style={styles.section}>
-        <Image source={Locker} style={styles.imagemLocker} />
-        <TextInput
-          style={{ flex: 1, marginLeft: 15 }}
-          placeholder="Senha"
-          underlineColorAndroid="transparent"
-        />
-      </View>
-
-      <Pressable
-        style={styles.btnEsqueciSenha}
-        onPress={(_) => alert("Página em construção")}
-      >
-        <Text style={styles.txtEsqueciSenha}>ESQUECI SENHA</Text>
-      </Pressable>
-
-      <Pressable
-        style={styles.btnLogin}
-        onPress={(_) => alert("Página em construção")}
-      >
-        <Text style={styles.txtLogin}>LOGIN</Text>
-      </Pressable>
-      <Text style={{ fontSize: 12, marginBottom: 30 }}>ou acesse com:</Text>
-      <View style={styles.containerMidiasSociais}>
-        <Pressable onPress={(_) => alert("Página em Construção")}>
-          <Image source={Gmail} style={styles.imagemMidias} />
-        </Pressable>
-        <Pressable onPress={(_) => alert("Página em Construção")}>
-          <Image source={Facebook} style={styles.imagemMidias} />
-        </Pressable>
-        <Pressable onPress={(_) => alert("Página em Construção")}>
-          <Image source={Twitter} style={styles.imagemMidias} />
-        </Pressable>
-      </View>
-
-      <View style={styles.containerRegistro}>
-        <Text style={{ fontSize: 18, marginRight: 10 }}>Novo no GSN?</Text>
-        <Pressable onPress={() => navigation.navigate("CriarConta")}>
-          <Text style={{ fontSize: 18, fontWeight: "bold", color: "#32a060" }}>
-            Registre-se
+    
+      <ImageBackground source={Fundo} resizeMode="cover" style={styles.container}>
+        <View style={styles.containerLogo}>
+          <Text style={{ fontSize: 22, fontWeight: "900", color: "#fff" }}>
+            LOGO
           </Text>
+        </View>
+        <View style={styles.section}>
+          <Image source={Mail} style={styles.imagemMail} />
+          <TextInput
+            style={{ color:"#fff", flex: 1, marginLeft: 15 }}
+            placeholder="Email"
+            underlineColorAndroid="transparent"
+          />
+        </View>
+        <View style={styles.section}>
+          <Image source={Locker} style={styles.imagemLocker} />
+          <TextInput
+            style={{ color:"#fff", flex: 1, marginLeft: 15 }}
+            placeholder="Senha"
+            underlineColorAndroid="transparent"
+          />
+        </View>
+
+        <Pressable
+          style={styles.btnEsqueciSenha}
+          onPress={(_) => alert("Página em construção")}
+        >
+          <Text style={styles.txtEsqueciSenha}>ESQUECI SENHA</Text>
         </Pressable>
-      </View>
-    </View>
+
+        <Pressable
+          style={styles.btnLogin}
+          onPress={(_) => alert("Página em construção")}
+        >
+          <Text style={styles.txtLogin}>LOGIN</Text>
+        </Pressable>
+        <Text style={{color:"#fff", fontSize: 14, marginBottom: 30 }}>ou acesse com:</Text>
+        <View style={styles.containerMidiasSociais}>
+          <Pressable onPress={(_) => alert("Página em Construção")}>
+            <Image source={Gmail} style={styles.imagemMidias} />
+          </Pressable>
+          <Pressable onPress={(_) => alert("Página em Construção")}>
+            <Image source={Facebook} style={styles.imagemMidias} />
+          </Pressable>
+          <Pressable onPress={(_) => alert("Página em Construção")}>
+            <Image source={Twitter} style={styles.imagemMidias} />
+          </Pressable>
+        </View>
+
+        <View style={styles.containerRegistro}>
+          <Text style={{ color:"#fff", fontSize: 18, marginRight: 10 }}>Novo no GSN?</Text>
+          <Pressable onPress={() => navigation.navigate("CriarConta")}>
+            <Text style={{ fontSize: 18, fontWeight: "bold", color: "#32a060" }}>
+              Registre-se
+            </Text>
+          </Pressable>
+        </View>
+      </ImageBackground>
   );
 };
 
@@ -105,18 +108,10 @@ const CriarConta = (props) => {
             width: "100%",
           }}
         >
-          {/* <View style={styles.header}>
-            <Pressable onPress={(_) => alert("botão em desenvolvimento")}>
-              <Image source={Arrow} style={styles.seta} />
-            </Pressable>
-            <Text style={{ marginBottom: 20, fontSize: 24 }}>
-              Crie sua conta
-            </Text>
-          </View> */}
         </View>
         <View style={styles.sectionConta}>
           <TextInput
-            style={{ flex: 1, marginLeft: 15, fontSize: 18 }}
+            style={{ flex: 1, marginLeft: 15, fontSize: 18}}
             placeholder="Email"
             underlineColorAndroid="transparent"
           />
@@ -193,12 +188,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center", 
   },
   containerLogo: {
     width: 260,
     height: 160,
-    backgroundColor: "#c4c4c4",
     borderRadius: 30,
     marginBottom: 50,
     alignItems: "center",
@@ -208,7 +202,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#e8e8e8",
+    backgroundColor: "rgba(0,0,0,0.3)",
     width: 260,
     height: 50,
     borderRadius: 10,
@@ -233,17 +227,17 @@ const styles = StyleSheet.create({
   btnEsqueciSenha: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "rgba(0,0,0,0.3)",
     borderRadius: 25,
     borderWidth: 0.5,
-    borderColor: "#000",
-    width: 110,
-    height: 25,
+    borderColor: "#fff",
+    width: 130,
+    height: 30,
     marginBottom: 30,
   },
   txtEsqueciSenha: {
-    color: "#a0a0a0",
-    fontSize: 12,
+    color: "#fff",
+    fontSize: 14,
     fontWeight: "bold",
   },
   btnLogin: {
@@ -308,7 +302,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "rgba(255,255,255,0.1)",
     borderBottomWidth: 3,
     borderBottomColor: "#32a060",
     width: 330,
