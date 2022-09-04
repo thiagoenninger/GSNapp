@@ -1,4 +1,5 @@
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import { StatusBar } from "react-native";
 
 import Home from "../pages/Home";
 import CriarConta from "../pages/CriarConta";

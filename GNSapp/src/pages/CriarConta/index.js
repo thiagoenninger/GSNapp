@@ -70,7 +70,7 @@ const CriarConta = (props) => {
         <View style={styles.containerBtn}>
         <Pressable
           style={styles.btnRegistro}
-          onPress={() => navigate("Home")}
+          onPress={() => alert("Registro feito com sucesso!")}
         >
           <Text style={{ fontSize: 16, fontWeight: "700", color: "#fff" }}>
             REGISTRAR

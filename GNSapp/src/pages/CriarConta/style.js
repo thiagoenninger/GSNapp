@@ -9,9 +9,9 @@ const styles = StyleSheet.create({
   },
   sectionConta: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "rgba(0,0,0,0.3)",
+    backgroundColor: "rgba(0,0,0,0.6)",
     borderBottomWidth: 3,
     borderBottomColor: "#32a060",
     width: 280,
