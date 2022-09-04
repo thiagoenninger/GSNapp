@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import {
   Text,
   View,
@@ -10,11 +9,10 @@ import {
   StatusBar,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import {Feather} from '@expo/vector-icons';
 
 import Fundo from "../../assets/fundo2.png";
 
-import Mail from "../../assets/mail.png";
-import Locker from "../../assets/locker.png";
 import Gmail from "../../assets/gmail.png";
 import Facebook from "../../assets/facebook.png";
 import Twitter from "../../assets/twitter.png";
@@ -32,22 +30,22 @@ const Home = (props) => {
         </Text>
       </View>
       <View style={styles.section}>
-        <Image source={Mail} style={styles.imagemMail} />
         <TextInput
           style={{ color: "#fff", flex: 1, marginLeft: 15 }}
           placeholder="Email"
           placeholderTextColor="#fff"
           underlineColorAndroid="transparent"
         />
+        <Feather name="mail" size={24} color="#fff" style={styles.icons}/>
       </View>
       <View style={styles.section}>
-        <Image source={Locker} style={styles.imagemLocker} />
         <TextInput
           style={{ color: "#fff", flex: 1, marginLeft: 15 }}
           placeholder="Senha"
           placeholderTextColor="#fff"
           underlineColorAndroid="transparent"
         />
+        <Feather name="lock" size={24} color="#fff" style={styles.icons}/>
       </View>
 
       <Pressable

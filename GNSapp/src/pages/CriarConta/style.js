@@ -27,10 +27,6 @@ const styles = StyleSheet.create({
   imagem: {
     padding: 10,
     marginRight: 15,
-    height: 26,
-    width: 26,
-    resizeMode: "stretch",
-    alignItems: "center",
   },
   btnRegistro: {
     backgroundColor: "#32a060",

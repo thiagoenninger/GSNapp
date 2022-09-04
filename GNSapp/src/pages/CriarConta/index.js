@@ -1,12 +1,7 @@
 import * as React from "react";
 import { Text, View, TextInput, Image, Pressable, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
-import Mail from "../../assets/mail.png";
-import User from "../../assets/user01.png";
-import User2 from "../../assets/user02.png";
-import Senha from "../../assets/locker.png";
-import ConfirmSenha from "../../assets/locker2Aberto.png";
+import {Feather} from '@expo/vector-icons';
 
 import styles from './style'
 import Fundo from "../../assets/fundoCriarConta.png";	
@@ -23,7 +18,7 @@ const CriarConta = (props) => {
             placeholderTextColor="#fff"
             underlineColorAndroid="transparent"
           />
-          <Image source={Mail} style={styles.imagem} />
+          <Feather name="mail" size={24} color="#fff" style={styles.imagem}/>
         </View>
 
         <View style={styles.sectionConta}>
@@ -33,7 +28,7 @@ const CriarConta = (props) => {
             placeholderTextColor="#fff"
             underlineColorAndroid="transparent"
           />
-          <Image source={User} style={styles.imagem} />
+          <Feather name="user" size={24} color="#fff" style={styles.imagem}/>
         </View>
 
         <View style={styles.sectionConta}>
@@ -43,7 +38,7 @@ const CriarConta = (props) => {
             placeholderTextColor="#fff"
             underlineColorAndroid="transparent"
           />
-          <Image source={User2} style={styles.imagem} />
+          <Feather name="user" size={24} color="#fff" style={styles.imagem}/>
         </View>
 
         <View style={styles.sectionConta}>
@@ -54,7 +49,7 @@ const CriarConta = (props) => {
             underlineColorAndroid="transparent"
             secureTextEntry={true}
           />
-          <Image source={Senha} style={styles.imagem} />
+          <Feather name="lock" size={24} color="#fff" style={styles.imagem}/>
         </View>
 
         <View style={styles.sectionConta}>
@@ -65,7 +60,7 @@ const CriarConta = (props) => {
             underlineColorAndroid="transparent"
             secureTextEntry={true}
           />
-          <Image source={ConfirmSenha} style={styles.imagem} />
+          <Feather name="unlock" size={24} color="#fff" style={styles.imagem}/>
         </View>
         <View style={styles.containerBtn}>
         <Pressable
