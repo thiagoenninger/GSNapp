@@ -5,21 +5,46 @@ import {
   TextInput,
   Pressable,
   ImageBackground,
+  Keyboard,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import styles from "./style";
 import Fundo from "../../assets/fundoCriarConta.png";
 
 const CriarConta = (props) => {
+
   const { navigate } = useNavigation();
 
+  const [id, setId] = useState("");
   const [email, setEmail] = useState("");
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
+
+
+
+  const newUser = async () => {
+    try{
+      await AsyncStorage.setItem("@email", email, "@nome", nome, "@sobrenome", sobrenome, "@senha", senha);
+    } catch (err) {
+      console.log(err)
+    }
+    Keyboard.dismiss()
+  }
+
+  // const deleteUser = async () => {
+  //   try{
+  //     await AsyncStorage.removeItem("@email")
+  //     setEmail()
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  //   Keyboard.dismiss()
+  // }
 
   return (
     <View style={{ flex: 1 }}>
@@ -31,7 +56,7 @@ const CriarConta = (props) => {
               placeholder="Email"
               placeholderTextColor="#fff"
               value={email}
-              onChangeText={text => setEmail(text)}
+              onChangeText={value => setEmail(value)}
             />
             <Feather name="mail" size={24} color="#fff" style={styles.imagem} />
           </View>
@@ -42,7 +67,7 @@ const CriarConta = (props) => {
               placeholder="Nome"
               placeholderTextColor="#fff"
               value={nome}
-              onChangeText={text => setNome(text)}
+              onChangeText={value => setNome(value)}
             />
             <Feather name="user" size={24} color="#fff" style={styles.imagem} />
           </View>
@@ -53,7 +78,7 @@ const CriarConta = (props) => {
               placeholder="Sobrenome"
               placeholderTextColor="#fff"
               value={sobrenome}
-              onChangeText={text => setSobrenome(text)}
+              onChangeText={value => setSobrenome(value)}
             />
             <Feather name="user" size={24} color="#fff" style={styles.imagem} />
           </View>
@@ -65,7 +90,7 @@ const CriarConta = (props) => {
               placeholderTextColor="#fff"
               secureTextEntry={true}
               value={senha}
-              onChangeText={text => setSenha(text)}
+              onChangeText={value => setSenha(value)}
             />
             <Feather name="lock" size={24} color="#fff" style={styles.imagem} />
           </View>
@@ -77,7 +102,7 @@ const CriarConta = (props) => {
               placeholderTextColor="#fff"
               secureTextEntry={true}
               value={confirmarSenha}
-              onChangeText={text => setConfirmarSenha(text)}
+              onChangeText={value => setConfirmarSenha(value)}
             />
             <Feather
               name="unlock"
@@ -89,7 +114,7 @@ const CriarConta = (props) => {
           <View style={styles.containerBtn}>
             <Pressable
               style={styles.btnRegistro}
-              onPress={() => {}}
+              onPress={newUser}
             >
               <Text style={{ fontSize: 16, fontWeight: "700", color: "#fff" }}>
                 REGISTRAR
