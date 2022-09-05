@@ -18,7 +18,7 @@ const CriarConta = (props) => {
 
   const { navigate } = useNavigation();
 
-  const [id, setId] = useState("");
+  const [id, setId] = useState(null);
   const [email, setEmail] = useState("");
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
@@ -28,8 +28,20 @@ const CriarConta = (props) => {
 
 
   const newUser = async () => {
+    const user = {
+      id: id,
+      email: email,
+      nome: nome,
+      sobrenome: sobrenome,
+      senha: senha
+    }
     try{
-      await AsyncStorage.setItem("@email", email, "@nome", nome, "@sobrenome", sobrenome, "@senha", senha);
+      const users = await AsyncStorage.getItem("users")
+      const usersArray = JSON.parse(users || "[]")
+      user.id = usersArray.length + 1
+      usersArray.push(user)
+      await AsyncStorage.setItem("users", JSON.stringify(usersArray))
+      console.log(usersArray)
     } catch (err) {
       console.log(err)
     }
