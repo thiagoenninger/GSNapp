@@ -6,6 +6,7 @@ import {
   Pressable,
   ImageBackground,
   Keyboard,
+  ListViewBase,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
@@ -25,28 +26,42 @@ const CriarConta = (props) => {
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
 
+  const [lista, setLista] = useState([]);
+  const [counter, setCounter] = useState(0);
 
 
-  const newUser = async () => {
-    const user = {
-      id: id,
-      email: email,
-      nome: nome,
-      sobrenome: sobrenome,
-      senha: senha
-    }
-    try{
-      const users = await AsyncStorage.getItem("users")
-      const usersArray = JSON.parse(users || "[]")
-      user.id = usersArray.length + 1
-      usersArray.push(user)
-      await AsyncStorage.setItem("users", JSON.stringify(usersArray))
-      console.log(usersArray)
-    } catch (err) {
-      console.log(err)
-    }
-    Keyboard.dismiss()
+  function newUser() {
+    const tempLista = [...lista, {id: counter, email, nome, sobrenome, senha, confirmarSenha}];
+    setLista(tempLista);
+    setCounter(counter + 1);
+    setId(null);
+    setEmail("");
+    setNome("");
+    setSobrenome("");
+    setSenha("");
+    setConfirmarSenha("");
+    console.log(tempLista);
   }
+  // const newUser = async () => {
+  //   const user = {
+  //     id: id,
+  //     email: email,
+  //     nome: nome,
+  //     sobrenome: sobrenome,
+  //     senha: senha
+  //   }
+  //   try{
+  //     const users = await AsyncStorage.getItem("users")
+  //     const usersArray = JSON.parse(users || "[]")
+  //     user.id = usersArray.length + 1
+  //     usersArray.push(user)
+  //     await AsyncStorage.setItem("users", JSON.stringify(usersArray))
+  //     console.log(usersArray)
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  //   Keyboard.dismiss()
+  // }
 
   // const deleteUser = async () => {
   //   try{
@@ -68,7 +83,7 @@ const CriarConta = (props) => {
               placeholder="Email"
               placeholderTextColor="#fff"
               value={email}
-              onChangeText={value => setEmail(value)}
+              onChangeText={setEmail}
             />
             <Feather name="mail" size={24} color="#fff" style={styles.imagem} />
           </View>
@@ -79,7 +94,7 @@ const CriarConta = (props) => {
               placeholder="Nome"
               placeholderTextColor="#fff"
               value={nome}
-              onChangeText={value => setNome(value)}
+              onChangeText={setNome}
             />
             <Feather name="user" size={24} color="#fff" style={styles.imagem} />
           </View>
@@ -90,7 +105,7 @@ const CriarConta = (props) => {
               placeholder="Sobrenome"
               placeholderTextColor="#fff"
               value={sobrenome}
-              onChangeText={value => setSobrenome(value)}
+              onChangeText={setSobrenome}
             />
             <Feather name="user" size={24} color="#fff" style={styles.imagem} />
           </View>
@@ -102,7 +117,7 @@ const CriarConta = (props) => {
               placeholderTextColor="#fff"
               secureTextEntry={true}
               value={senha}
-              onChangeText={value => setSenha(value)}
+              onChangeText={setSenha}
             />
             <Feather name="lock" size={24} color="#fff" style={styles.imagem} />
           </View>
@@ -114,7 +129,7 @@ const CriarConta = (props) => {
               placeholderTextColor="#fff"
               secureTextEntry={true}
               value={confirmarSenha}
-              onChangeText={value => setConfirmarSenha(value)}
+              onChangeText={setConfirmarSenha}
             />
             <Feather
               name="unlock"
@@ -126,7 +141,7 @@ const CriarConta = (props) => {
           <View style={styles.containerBtn}>
             <Pressable
               style={styles.btnRegistro}
-              onPress={newUser}
+              onPress={() => newUser()}
             >
               <Text style={{ fontSize: 16, fontWeight: "700", color: "#fff" }}>
                 REGISTRAR
