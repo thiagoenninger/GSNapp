@@ -59,7 +59,7 @@ const Home = (props) => {
 
         <Pressable
           style={styles.btnLogin}
-          onPress={() => navigate("Inicio")}
+          onPress={() => alert("Página em construção")}
         >
           <Text style={styles.txtLogin}>LOGIN</Text>
         </Pressable>

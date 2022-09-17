@@ -7,6 +7,7 @@ import {
   ImageBackground,
   Keyboard,
   ListViewBase,
+  FlatList,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
@@ -15,7 +16,42 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "./style";
 import Fundo from "../../assets/fundoCriarConta.png";
 
-const CriarConta = (props) => {
+const ListaCadastro = (props) => {
+  return (
+    <View
+      style={{
+        flex: 1,
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "space-around",
+          borderRadius: 10,
+          borderColor: "rgba(255,255,255,0.5)",
+          borderWidth: 0.5,
+          marginBottom: 10,
+          padding: 10,
+        }}
+      >
+        <Text style={{ color: "#fff", marginRight:10, fontSize:16 }}>{props.item.id}</Text>
+        <Text style={{ color: "#fff", marginRight:10, fontSize:16 }}>{props.item.nome}</Text>
+        <Text style={{ color: "#fff", marginRight:10, fontSize:16 }}>{props.item.sobrenome}</Text>
+        <Text style={{ color: "#fff", marginRight:10, fontSize:16 }}>{props.item.email}</Text>
+        <Feather name="edit" size={20} color="#fff" style={{marginRight:10 }} 
+          onPress={() => {props.onEdit(props.item.id)}}/>
+        <Feather name="trash" size={20} color="#fff"
+          onPress = {() => {props.onDelete(props.item.id)}}/>
+      </View>
+    </View>
+  );
+}
+
+
+export default function CriarConta() {
 
   const { navigate } = useNavigation();
 
@@ -24,14 +60,14 @@ const CriarConta = (props) => {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [senha, setSenha] = useState("");
-  const [confirmarSenha, setConfirmarSenha] = useState("");
+  //const [confirmarSenha, setConfirmarSenha] = useState("");
 
   const [lista, setLista] = useState([]);
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
 
 
   function newUser() {
-    const tempLista = [...lista, {id: counter, email, nome, sobrenome, senha, confirmarSenha}];
+    const tempLista = [...lista, {id: counter, email, nome, sobrenome, senha}];
     setLista(tempLista);
     setCounter(counter + 1);
     setId(null);
@@ -39,9 +75,41 @@ const CriarConta = (props) => {
     setNome("");
     setSobrenome("");
     setSenha("");
-    setConfirmarSenha("");
-    console.log(tempLista);
   }
+
+  function procurarPorId(id) {
+    for (let i = 0; i < lista.length; i++) {
+      const obj = lista[i]
+      if (obj.id == id) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  function editUser(id) {
+    const indice = procurarPorId(id); 
+    if (indice != -1) {
+      const obj = lista[indice];
+      setId(obj.id);
+      setEmail(obj.email);
+      setNome(obj.nome);
+      setSobrenome(obj.sobrenome);
+      setSenha(obj.senha);
+    }
+  } 
+
+  function deleteUser(id) {
+    const indice = procurarPorId(id);
+    const tempLista = [...lista];
+    tempLista.splice(indice, 1);
+    setLista(tempLista);
+  }
+
+
+
+
+
   // const newUser = async () => {
   //   const user = {
   //     id: id,
@@ -122,7 +190,7 @@ const CriarConta = (props) => {
             <Feather name="lock" size={24} color="#fff" style={styles.imagem} />
           </View>
 
-          <View style={styles.sectionConta}>
+          {/* <View style={styles.sectionConta}>
             <TextInput
               style={styles.txtInput}
               placeholder="Confirmar Senha"
@@ -137,7 +205,8 @@ const CriarConta = (props) => {
               color="#fff"
               style={styles.imagem}
             />
-          </View>
+          </View> */}
+
           <View style={styles.containerBtn}>
             <Pressable
               style={styles.btnRegistro}
@@ -157,9 +226,16 @@ const CriarConta = (props) => {
             </Pressable>
           </View>
         </View>
+        <View style={{flex:3}}>
+          <FlatList data={lista}
+            renderItem={(props) => <ListaCadastro {...props}
+              onEdit={editUser}
+              onDelete={deleteUser}
+            />}
+          />
+        </View>
       </ImageBackground>
     </View>
   );
 };
 
-export default CriarConta;
