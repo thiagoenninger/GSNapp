@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Text,
   View,
   TextInput,
   Pressable,
   ImageBackground,
-  Keyboard,
-  ListViewBase,
   FlatList,
-  Button,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
@@ -62,10 +59,19 @@ export default function CriarConta() {
   const [sobrenome, setSobrenome] = useState("");
   const [senha, setSenha] = useState("");
   //const [confirmarSenha, setConfirmarSenha] = useState("");
-
   const [lista, setLista] = useState([]);
   const [counter, setCounter] = useState(0);
 
+  useEffect(() =>{AsyncStorage.getItem("lista")
+                               .then((texto)=>{
+                                let value = []
+                                if (texto !== null) {
+                                  value = JSON.parse(texto);
+                                }
+                                setLista(value.lista);
+                                setCounter(value.counter + 1);
+                               })
+}, [id])
 
   function newUser() {
     const tempLista = [...lista];
