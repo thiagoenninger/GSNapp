@@ -63,14 +63,22 @@ export default function CriarConta() {
   //const [confirmarSenha, setConfirmarSenha] = useState("");
 
   const [lista, setLista] = useState([]);
-  const [counter, setCounter] = useState(1);
+  const [counter, setCounter] = useState(0);
 
 
   function newUser() {
-    const tempLista = [...lista, {id: counter, email, nome, sobrenome, senha}];
+    const tempLista = [...lista];
+    if (id === "") {
+      tempLista.push({ id: counter, email, nome, sobrenome, senha });
+      setCounter(counter + 1);
+    } else {
+      const indice = procurarPorId(id);
+      if(indice != -1){
+        tempLista.splice(indice, 1, {id, email, nome, sobrenome, senha});
+      }
+    }
     setLista(tempLista);
-    setCounter(counter + 1);
-    setId(null);
+    setId("");
     setEmail("");
     setNome("");
     setSobrenome("");
@@ -106,40 +114,7 @@ export default function CriarConta() {
     setLista(tempLista);
   }
 
-
-
-
-
-  // const newUser = async () => {
-  //   const user = {
-  //     id: id,
-  //     email: email,
-  //     nome: nome,
-  //     sobrenome: sobrenome,
-  //     senha: senha
-  //   }
-  //   try{
-  //     const users = await AsyncStorage.getItem("users")
-  //     const usersArray = JSON.parse(users || "[]")
-  //     user.id = usersArray.length + 1
-  //     usersArray.push(user)
-  //     await AsyncStorage.setItem("users", JSON.stringify(usersArray))
-  //     console.log(usersArray)
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  //   Keyboard.dismiss()
-  // }
-
-  // const deleteUser = async () => {
-  //   try{
-  //     await AsyncStorage.removeItem("@email")
-  //     setEmail()
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  //   Keyboard.dismiss()
-  // }
+  
 
   return (
     <View style={{ flex: 1 }}>
