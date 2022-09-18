@@ -8,6 +8,7 @@ import {
   Keyboard,
   ListViewBase,
   FlatList,
+  Button,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
@@ -83,6 +84,8 @@ export default function CriarConta() {
     setNome("");
     setSobrenome("");
     setSenha("");
+
+    AsyncStorage.setItem("lista", JSON.stringify({lista: tempLista, counter: counter}));
   }
 
   function procurarPorId(id) {
@@ -112,9 +115,11 @@ export default function CriarConta() {
     const tempLista = [...lista];
     tempLista.splice(indice, 1);
     setLista(tempLista);
+
+    AsyncStorage.setItem("lista", JSON.stringify({lista: tempLista, counter: counter}))
   }
 
-  
+  const btnName = (id !== "") ? "ATUALIZAR" : "REGISTRAR";
 
   return (
     <View style={{ flex: 1 }}>
@@ -188,7 +193,7 @@ export default function CriarConta() {
               onPress={() => newUser()}
             >
               <Text style={{ fontSize: 16, fontWeight: "700", color: "#fff" }}>
-                REGISTRAR
+                {btnName}
               </Text>
             </Pressable>
             <Pressable
@@ -201,13 +206,34 @@ export default function CriarConta() {
             </Pressable>
           </View>
         </View>
-        <View style={{flex:3}}>
+        <View style={{flex:5}}>
           <FlatList data={lista}
             renderItem={(props) => <ListaCadastro {...props}
               onEdit={editUser}
               onDelete={deleteUser}
             />}
           />
+          <View style={{flex:1, alignItems:"center", flexDirection:"row", justifyContent:"center"}}>
+            <Text style={{color:"#fff", fontSize:16}}>Lista completa de usuários cadastrados </Text>
+            <Pressable 
+              onPress={
+                () => {
+                  AsyncStorage.getItem("lista")
+                  .then((texto) => {
+                    let value = []
+                    if(texto !== null){
+                      value = JSON.parse(texto);
+                    }
+                    setLista(value.lista);
+                    setCounter(value.counter + 1);
+                  })
+                  .catch((err) => {alert("Erro ao ler a lista")})
+                 }
+                }
+              >
+              <Text style={{color:"#32a060", fontSize:16}}>aqui.</Text>
+            </Pressable>
+          </View>
         </View>
       </ImageBackground>
     </View>
