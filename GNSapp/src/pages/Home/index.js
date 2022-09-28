@@ -10,7 +10,7 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import {Feather} from '@expo/vector-icons';
+import { Feather } from "@expo/vector-icons";
 
 import Fundo from "../../assets/fundo2.png";
 
@@ -23,9 +23,13 @@ import styles from "./style";
 const Home = (props) => {
   const { navigate } = useNavigation();
   return (
-    <View style={{flex:1}}>
-      <ImageBackground source={Fundo} resizeMode="cover" style={styles.container}>
-        <StatusBar animated={true}/>
+    <View style={{ flex: 1 }}>
+      <ImageBackground
+        source={Fundo}
+        resizeMode="cover"
+        style={styles.container}
+      >
+        <StatusBar animated={true} />
         <View style={styles.containerLogo}>
           <Text style={{ fontSize: 22, fontWeight: "900", color: "#fff" }}>
             LOGO
@@ -38,7 +42,7 @@ const Home = (props) => {
             placeholderTextColor="#fff"
             underlineColorAndroid="transparent"
           />
-          <Feather name="mail" size={24} color="#fff" style={styles.icons}/>
+          <Feather name="mail" size={24} color="#fff" style={styles.icons} />
         </View>
         <View style={styles.section}>
           <TextInput
@@ -47,7 +51,7 @@ const Home = (props) => {
             placeholderTextColor="#fff"
             underlineColorAndroid="transparent"
           />
-          <Feather name="lock" size={24} color="#fff" style={styles.icons}/>
+          <Feather name="lock" size={24} color="#fff" style={styles.icons} />
         </View>
 
         <Pressable
@@ -59,7 +63,7 @@ const Home = (props) => {
 
         <Pressable
           style={styles.btnLogin}
-          onPress={() => alert("Página em construção")}
+          onPress={() => navigate("MeuJardim")}
         >
           <Text style={styles.txtLogin}>LOGIN</Text>
         </Pressable>
