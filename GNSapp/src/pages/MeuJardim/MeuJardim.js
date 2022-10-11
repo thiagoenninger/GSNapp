@@ -1,7 +1,16 @@
 import * as React from "react";
-import { Text, View, StatusBar, Pressable, Image } from "react-native";
+import {
+  Text,
+  View,
+  StatusBar,
+  Pressable,
+  Image,
+  FlatList,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Tabs from "react-native-tabs";
+import { CardPlanta } from "../../components/CardPlanta.js";
+import { LISTA } from "../../utils/ListaPlantas.js";
 
 import styles from "./StylesMeuJardim";
 
@@ -42,7 +51,7 @@ const MeuJardim = (props) => {
             borderWidth: 1,
             borderColor: "#32A06080",
           }}
-          onPress={() => navigate("Planta")}
+          onPress={() => navigate("AdicionarPlanta")}
         >
           <Text
             style={{
@@ -81,42 +90,21 @@ const MeuJardim = (props) => {
       </View>
       <View
         style={{
-          marginTop: 50,
+          marginTop: 15,
           marginBottom: 50,
           justifyContent: "center",
           itemsCenter: "flex-end",
           flexDirection: "row",
         }}
       >
-        <View
-          style={{
-            backgroundColor: "#32A060",
-            width: 250,
-            paddingHorizontal: 20,
-            paddingVertical: 30,
-            borderRadius: 25,
-            marginRight: 10,
-          }}
-        >
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image source={require("../../assets/cactus_sf.png")} />
-          </View>
-          <Text
-            style={{
-              color: "white",
-              fontSize: 18,
-              fontWeight: "600",
-              marginBottom: 10,
-              // marginRight: 100,
-              marginTop: 30,
-            }}
-          >
-            Planta A
-          </Text>
-          <Text style={{ color: "white", fontSize: 14 }}>
-            Espaço para infos básicas desta planta
-          </Text>
-        </View>
+        <FlatList
+          contentContainerStyle={{ paddingLeft: 32, paddingRight: 64 }}
+          data={LISTA}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <CardPlanta data={item} />}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        />
       </View>
     </View>
   );

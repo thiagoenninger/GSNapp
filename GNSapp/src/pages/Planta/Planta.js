@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Text,
-  View,
-  StatusBar,
-  Pressable,
-  Image,
-  TextInput,
-} from "react-native";
+import { Text, View, StatusBar, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
 
