@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Text, View, StatusBar, TextInput } from "react-native";
+import {
+  Text,
+  View,
+  StatusBar,
+  TextInput,
+  Image,
+  Pressable,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
 
@@ -39,9 +46,49 @@ const Planta = (props) => {
           borderBottomLeftRadius: 25,
           borderTopLeftRadius: 25,
           marginLeft: 20,
-          paddingBottom: 20,
+          paddingBottom: 10,
+          marginTop: 40,
         }}
       >
+        <View style={{ flexDirection: "row" }}>
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              width: 100,
+              backgroundColor: "#fff",
+              borderRadius: 8,
+              marginTop: -70,
+              paddingHorizontal: 100,
+              paddingVertical: 20,
+              shadowColor: "rgba(0, 0, 0, 0.5)",
+              shadowOffset: { width: 3, height: 1 },
+              elevation: 20,
+              shadowRadius: 20,
+              marginBottom: 20,
+              marginRight: 20,
+            }}
+          >
+            <Image
+              source={require("../../assets/cactus_sf.png")}
+              style={{ justifyContent: "center", alignItems: "center" }}
+            />
+          </View>
+          <View>
+            <Image
+              source={require("../../assets/camera.png")}
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: 20,
+              }}
+            />
+            <Image
+              source={require("../../assets/picture.png")}
+              style={{ justifyContent: "center", alignItems: "center" }}
+            />
+          </View>
+        </View>
         <View
           style={{
             flexDirection: "row",
@@ -227,6 +274,42 @@ const Planta = (props) => {
             placeholderTextColor="#fff"
             underlineColorAndroid="transparent"
           />
+        </View>
+        <View
+          style={{
+            justifyContent: "flex-end",
+            alignItems: "flex-end",
+          }}
+        >
+          <Pressable
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              paddingVertical: 10,
+              paddingHorizontal: 24,
+              borderRadius: 12,
+              elevation: 3,
+              backgroundColor: "#fff",
+              marginTop: 20,
+              borderColor: "#CCCCCC",
+              marginBottom: 20,
+              marginRight: 20,
+            }}
+            onPress={() => navigate("MeuJardim")}
+          >
+            <Text
+              style={{
+                fontSize: 16,
+                lineHeight: 21,
+                fontWeight: "300",
+                letterSpacing: 0.25,
+                color: "#646464",
+                fontWeight: "500",
+              }}
+            >
+              Salvar
+            </Text>
+          </Pressable>
         </View>
       </View>
     </View>

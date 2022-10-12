@@ -59,10 +59,10 @@ const MeuJardim = (props) => {
               lineHeight: 21,
               fontWeight: "300",
               letterSpacing: 0.25,
-              color: "#A0A0A0",
+              color: "#2A2A2A",
             }}
           >
-            Adicionar
+            Adicionar nova planta
           </Text>
         </Pressable>
       </View>
