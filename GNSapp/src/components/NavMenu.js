@@ -11,6 +11,7 @@ import CriarConta from '../pages/CriarConta';
 
 
 
+
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
