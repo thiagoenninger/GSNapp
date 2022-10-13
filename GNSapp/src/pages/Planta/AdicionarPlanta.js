@@ -164,7 +164,7 @@ const AdicionarPlanta = (props) => {
             marginBottom: 50,
             marginRight: 20,
           }}
-          onPress={() => navigate("MeuJardim")}
+          onPress={() => navigate("Home")}
         >
           <Text
             style={{
