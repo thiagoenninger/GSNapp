@@ -33,7 +33,7 @@ const AdicionarPlanta = (props) => {
             fontSize: 17,
             fontWeight: "500",
             marginHorizontal: 50,
-            marginVertical: 30,
+            marginVertical: 12,
           }}
         >
           Adicionar Planta
