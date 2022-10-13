@@ -11,7 +11,6 @@ import { useNavigation } from "@react-navigation/native";
 import Tabs from "react-native-tabs";
 import { CardPlanta } from "../../components/CardPlanta.js";
 import { LISTA } from "../../utils/ListaPlantas.js";
-
 import styles from "./StylesMeuJardim";
 
 const MeuJardim = (props) => {
