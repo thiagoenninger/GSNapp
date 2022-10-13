@@ -17,8 +17,8 @@ import styles from "./StylesRotinas";
 const MeuJardim = (props) => {
   const { navigate } = useNavigation();
   return (
-    <ScrollView>
-      <View style={{ backgroundColor: "white" }}>
+    <ScrollView >
+      <View style={{ backgroundColor: "white", }}>
         <StatusBar
           animated={true}
           barStyle="light-content"
