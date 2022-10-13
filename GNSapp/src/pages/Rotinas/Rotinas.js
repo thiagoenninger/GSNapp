@@ -9,15 +9,14 @@ import {
   ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import Tabs from "react-native-tabs";
-import { CardPlanta } from "../../components/CardPlanta";
+import { CardPlanta } from "../../components/CardRotina";
 import { ROTINAS } from "../../utils/ListaRotinas";
 import styles from "./StylesRotinas";
 
 const MeuJardim = (props) => {
   const { navigate } = useNavigation();
   return (
-    <ScrollView horizontal={true} style={{left: 0 }}>
+ 
       <View style={{ backgroundColor: "white", }}>
         <StatusBar
           animated={true}
@@ -28,16 +27,18 @@ const MeuJardim = (props) => {
           style={{
             borderBottomColor: "#CBCBCB",
             borderBottomWidth: 2,
-            marginBottom: 30,
+            marginBottom: 0,
           }}
         >
           <Text style={styles.textHeader}>Rotinas</Text>
         </View>
+        <ScrollView>
         <View
           style={{
             justifyContent: "flex-end",
             alignSelf: "flex-end",
             marginRight: 50,
+            marginTop: 30,
           }}
         >
           <Pressable
@@ -73,8 +74,8 @@ const MeuJardim = (props) => {
         </View>
         <View
           style={{
-            marginTop: 0,
-            marginBottom: 50,
+            marginTop: 20,
+            marginBottom: 70,
             justifyContent: "center",
             itemsCenter: "flex-start",
             flexDirection: "column",
@@ -90,8 +91,9 @@ const MeuJardim = (props) => {
             showsHorizontalScrollIndicator={false}
           />
         </View>
+        </ScrollView>
       </View>
-    </ScrollView>
+    
   );
 };
 

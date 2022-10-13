@@ -20,18 +20,6 @@ const styles = StyleSheet.create({
     marginVertical: 12,
   },
 
-  btnLogin: {
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#32a060",
-    borderRadius: 10,
-    width: 150,
-    height: 40,
-    marginBottom: 30,
-    shadowColor: "rgba(0, 0, 0, 0.5)",
-    shadowOffset: { width: 3, height: 1 },
-    shadowRadius: 5,
-  },
 });
 
 export default styles;

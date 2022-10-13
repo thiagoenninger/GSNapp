@@ -17,7 +17,7 @@ const Planta = (props) => {
   const [selectedValue, setSelectedValue] = useState("java");
   return (
     <View style={{ backgroundColor: "white" }}>
-      <ScrollView>
+    
         <StatusBar
           animated={true}
           barStyle="light-content"
@@ -41,6 +41,7 @@ const Planta = (props) => {
             Adicionar Planta
           </Text>
         </View>
+        <ScrollView>
         <View
           style={{
             backgroundColor: "#32A060",
