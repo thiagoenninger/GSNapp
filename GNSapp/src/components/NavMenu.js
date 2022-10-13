@@ -1,16 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import MeuJardim from '../pages/MeuJardim/MeuJardim';
-import Home from '../pages/Home';
+import Rotinas from '../pages/Rotinas/Rotinas';
 import AdicionarPlanta from '../pages/Planta/AdicionarPlanta';
 import Planta from '../pages/Planta/Planta';
 import CriarConta from '../pages/CriarConta';
-
-
-
-
-
-
 
 
 const Tab = createBottomTabNavigator();
@@ -21,18 +15,19 @@ const Tabs = () => {
         <Tab.Navigator initialRouteName="Home"
             screenOptions={{
                 headerShown: false,
+                tabBarHideOnKeyboard: true,
                 tabBarShowLabel: false,
+                tabBarPosition: 'bottom',
+                bottom: "always",
                 tabBarActiveTintColor: '#32A060',
-                tabBarInactiveTintColor: '#CBCBCB',
+               
+                
                 tabBarStyle: {
                     backgroundColor: '#FFFFFF',
                     height: 40,
-                    borderTopWidth: 0,
+                    borderTopWidth: 0.5,
                     elevation: 0,
-                    position: 'absolute',
-                
-                                        
-                    
+                   position: 'relative',
 
                 },
                 tabBarLabelStyle: {
@@ -54,7 +49,7 @@ const Tabs = () => {
                     
             </View>
         )}} />
-        <Tab.Screen name="Login" component={Home} options={{tabBarIcon: ({focused})=> (
+        <Tab.Screen name="Login" component={Rotinas} options={{tabBarIcon: ({focused})=> (
             <View>
                 <Image
                     source={require('../assets/rotinas.png')}
