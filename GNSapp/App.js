@@ -7,7 +7,7 @@ import Tabs from './src/components/NavMenu';
 const App = () => {
   return (
     <NavigationContainer>
-      <Tabs />
+      <Routes />
     </NavigationContainer>
      
   )

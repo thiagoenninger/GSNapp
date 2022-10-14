@@ -12,6 +12,7 @@ import Tabs from "react-native-tabs";
 import { CardPlanta } from "../../components/CardPlanta.js";
 import { LISTA } from "../../utils/ListaPlantas.js";
 import styles from "./StylesMeuJardim";
+import BottomMenu from "../../components/NavMenu"
 
 const MeuJardim = (props) => {
   const { navigate } = useNavigation();
