@@ -1,5 +1,4 @@
 import { Pressable, Text, TouchableHighlight, View, Image} from "react-native";
-import Harmony from '../assistente/Harmony.py';
 
 
 const BotaoBot = () => {
