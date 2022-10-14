@@ -18,7 +18,7 @@ const MeuJardim = (props) => {
   const { navigate } = useNavigation();
   return (
  
-      <View style={{ backgroundColor: "white", marginBottom: 30 }}>
+      <View style={{ backgroundColor: "white",  height:"100%" }}>
         <StatusBar
           animated={true}
           barStyle="light-content"
@@ -56,7 +56,7 @@ const MeuJardim = (props) => {
               borderWidth: 1,
               borderColor: "#32A06080",
             }}
-            onPress={() => navigate("AdicionarPlanta")}
+            onPress={(_) => alert("Página em construção")}
           >
             <Text
               style={{
@@ -74,7 +74,7 @@ const MeuJardim = (props) => {
         <View
           style={{
             marginTop: 20,
-            marginBottom: 70,
+            marginBottom: 50,
             justifyContent: "center",
             itemsCenter: "flex-start",
             flexDirection: "column",
