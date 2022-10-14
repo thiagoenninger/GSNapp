@@ -6,13 +6,14 @@ import {
   Pressable,
   Image,
   FlatList,
+  TouchableHighlight,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Tabs from "react-native-tabs";
 import { CardPlanta } from "../../components/CardPlanta.js";
 import { LISTA } from "../../utils/ListaPlantas.js";
 import styles from "./StylesMeuJardim";
-import BottomMenu from "../../components/NavMenu"
+import BotaoBot from "../../components/BotaoBot.js";
 
 const MeuJardim = (props) => {
   const { navigate } = useNavigation();
@@ -75,6 +76,7 @@ const MeuJardim = (props) => {
           }}
           selectedStyle={{ color: "black" }}
         >
+
           <Text name="first" style={{ fontWeight: "500" }}>
             Todas
           </Text>
@@ -97,6 +99,8 @@ const MeuJardim = (props) => {
           flexDirection: "row",
         }}
       >
+        
+
         <FlatList
           contentContainerStyle={{ paddingLeft: 32, paddingRight: 64 }}
           data={LISTA}
@@ -105,7 +109,14 @@ const MeuJardim = (props) => {
           horizontal
           showsHorizontalScrollIndicator={false}
         />
+       
       </View>
+      <View style={{ justifyContent: "center", alignItems: "center" }}>
+        <TouchableHighlight>
+          <Text style={{ color: "black", fontSize: 16 }}>Adicionar</Text>
+        </TouchableHighlight>
+      </View>
+
     </View>
   );
 };

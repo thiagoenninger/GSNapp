@@ -13,11 +13,12 @@ import { CardPlanta } from "../../components/CardRotina";
 import { ROTINAS } from "../../utils/ListaRotinas";
 import styles from "./StylesRotinas";
 
+
 const MeuJardim = (props) => {
   const { navigate } = useNavigation();
   return (
  
-      <View style={{ backgroundColor: "white", }}>
+      <View style={{ backgroundColor: "white", marginBottom: 30 }}>
         <StatusBar
           animated={true}
           barStyle="light-content"
@@ -27,12 +28,13 @@ const MeuJardim = (props) => {
           style={{
             borderBottomColor: "#CBCBCB",
             borderBottomWidth: 2,
-            marginBottom: 0,
+          
           }}
         >
           <Text style={styles.textHeader}>Rotinas</Text>
         </View>
         <ScrollView>
+          
         <View
           style={{
             justifyContent: "flex-end",
@@ -41,6 +43,7 @@ const MeuJardim = (props) => {
             marginTop: 30,
           }}
         >
+          
           <Pressable
             style={{
               alignItems: "center",
@@ -68,10 +71,6 @@ const MeuJardim = (props) => {
             </Text>
           </Pressable>
         </View>
-
-        <View style={{ marginTop: 0, marginHorizontal: 0 }}>
-          
-        </View>
         <View
           style={{
             marginTop: 20,
@@ -82,6 +81,7 @@ const MeuJardim = (props) => {
             flexWrap: "wrap",
           }}
         >
+          
           <FlatList
             contentContainerStyle={{ paddingLeft: 0, paddingRight: 64 }}
             data={ROTINAS}
@@ -90,8 +90,10 @@ const MeuJardim = (props) => {
             horizontal = {false}
             showsHorizontalScrollIndicator={false}
           />
+          
         </View>
         </ScrollView>
+        
       </View>
     
   );

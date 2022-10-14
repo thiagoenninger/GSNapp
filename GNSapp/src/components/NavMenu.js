@@ -7,6 +7,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import MeuJardim from '../pages/MeuJardim/MeuJardim';
 import Rotinas from '../pages/Rotinas/Rotinas';
 import Planta from '../pages/Planta/Planta';
+import CriarConta from '../pages/CriarConta';
+import Bot from '../pages/Bot/Harmony';
 
 
 // const Tab = createBottomTabNavigator();
@@ -24,12 +26,13 @@ import Planta from '../pages/Planta/Planta';
 //                 tabBarActiveTintColor: '#32A060',
                
                 
-//                 tabBarStyle: {
-//                     backgroundColor: '#FFFFFF',
-//                     height: 40,
-//                     borderTopWidth: 0.5,
-//                     elevation: 0,
-//                    position: 'relative',
+                // tabBarStyle: {
+                //     backgroundColor: '#FFFFFF',
+                //     height: 40,
+                //     borderTopWidth: 0.5,
+                //     elevation: 0,
+                //    position: 'absolute',
+                //    zIndex: 1,
 
 //                 },
 //                 tabBarLabelStyle: {
@@ -88,11 +91,24 @@ import Planta from '../pages/Planta/Planta';
 //                         tintColor: focused ? '#32A060' : '#CBCBCB',
 //                     }} />
 
-//             </View>
-//         )}} />
-//         </Tab.Navigator>
-//     );
-//     }
+    //         </View>
+    //     )}} />
+    //     <Tab.Screen name="AdicionarPlanta" component={Bot} options={{tabBarIcon: ({focused})=> (
+    //         <View>
+    //             <Image
+    //                 source={require('../assets/settings.png')}
+    //                 resizeMode="contain"
+    //                 style={{
+    //                     width: 25,
+    //                     height: 25,
+    //                     tintColor: focused ? '#32A060' : '#CBCBCB',
+    //                 }} />
+
+    //         </View>
+    //     )}} />
+    //     </Tab.Navigator>
+    // );
+    // }
 
 
 
