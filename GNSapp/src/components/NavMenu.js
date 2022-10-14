@@ -5,6 +5,7 @@ import Rotinas from '../pages/Rotinas/Rotinas';
 import AdicionarPlanta from '../pages/Planta/AdicionarPlanta';
 import Planta from '../pages/Planta/Planta';
 import CriarConta from '../pages/CriarConta';
+import Bot from '../pages/Bot/Harmony';
 
 
 const Tab = createBottomTabNavigator();
@@ -77,6 +78,19 @@ const Tabs = () => {
             </View>
         )}} />
         <Tab.Screen name="AdicionarPlanta" component={AdicionarPlanta} options={{tabBarIcon: ({focused})=> (
+            <View>
+                <Image
+                    source={require('../assets/settings.png')}
+                    resizeMode="contain"
+                    style={{
+                        width: 25,
+                        height: 25,
+                        tintColor: focused ? '#32A060' : '#CBCBCB',
+                    }} />
+
+            </View>
+        )}} />
+        <Tab.Screen name="AdicionarPlanta" component={Bot} options={{tabBarIcon: ({focused})=> (
             <View>
                 <Image
                     source={require('../assets/settings.png')}
