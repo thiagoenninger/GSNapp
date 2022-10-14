@@ -67,7 +67,7 @@ const MeuJardim = (props) => {
                 color: "#2A2A2A",
               }}
             >
-              Adicionar nova planta
+              Adicionar nova rotina
             </Text>
           </Pressable>
         </View>

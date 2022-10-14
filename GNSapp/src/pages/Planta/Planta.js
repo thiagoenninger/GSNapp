@@ -50,7 +50,7 @@ const Planta = (props) => {
             borderBottomLeftRadius: 25,
             borderTopLeftRadius: 25,
             marginLeft: 20,
-            paddingBottom: 20,
+            paddingBottom: 80,
             marginTop: 20,
           }}
         >

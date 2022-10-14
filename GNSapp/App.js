@@ -8,8 +8,7 @@ import BotaoBot from './src/components/BotaoBot';
 const App = () => {
   return (
     <NavigationContainer>
-      <Routes />
-      <BotaoBot/>
+      <Tabs />
     </NavigationContainer>
      
   )

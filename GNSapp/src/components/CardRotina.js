@@ -6,8 +6,8 @@ export function CardPlanta({ data }) {
   return (
     <View
       style={{
-        marginTop: 50,
-        marginBottom: 8,
+        marginTop: 30,
+        marginBottom: 1,
         justifyContent: "center",
         alignItems: "space-between",
         flexDirection: "row",
@@ -22,7 +22,7 @@ export function CardPlanta({ data }) {
             borderTopRightRadius: 25,
             borderBottomRightRadius: 25,
             marginRight: 10,
-            marginBottom: 0,
+            marginBottom: 45,
           }}
         >
           <View style={{ alignSelf: "flex-end", alignItems: "flex-end", flexDirection: "row",  position : "absolute",zIndex: 1}}>

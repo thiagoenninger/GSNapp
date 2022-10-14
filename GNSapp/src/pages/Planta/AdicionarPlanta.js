@@ -11,10 +11,12 @@ import {
   StyleSheet,
   TouchableHighlight,
 } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 const AdicionarPlanta = (props) => {
   const { navigate } = useNavigation();
   return (
+    
     <View style={{ backgroundColor: "white" }}>
       <StatusBar
         animated={true}

@@ -9,7 +9,6 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import Tabs from "react-native-tabs";
 import styles from "./style";
-import BottomMenu from "../../components/NavMenu"
 import { Feather } from "@expo/vector-icons";
 
 const Config = (props) => {
