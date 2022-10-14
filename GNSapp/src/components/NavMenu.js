@@ -27,7 +27,8 @@ const Tabs = () => {
                     height: 40,
                     borderTopWidth: 0.5,
                     elevation: 0,
-                   position: 'relative',
+                   position: 'absolute',
+                   zIndex: 1,
 
                 },
                 tabBarLabelStyle: {
