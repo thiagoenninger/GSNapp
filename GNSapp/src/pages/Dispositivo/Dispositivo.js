@@ -8,9 +8,7 @@ import {
   FlatList,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import Tabs from "react-native-tabs";
 import styles from "./style";
-import BottomMenu from "../../components/NavMenu"
 import Cactos from "../../assets/cactus_sf.png"
 import { Feather } from "@expo/vector-icons";
 
@@ -39,7 +37,7 @@ const Dispositivo = (props) => {
       </View>
       <View style={styles.containerPlanta}>
         <Text style={styles.textPlanta}>Cactos</Text>
-        <Image source={Cactos} style={{width: 50, height: 100, marginLeft:30}}/>
+        <Image source={Cactos} style={{width: 50, height: 100, marginLeft:0}}/>
       </View>
       <View style={styles.containerInfo}>
         <View style={styles.containerUmidade}>

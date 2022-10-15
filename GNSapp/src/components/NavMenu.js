@@ -6,7 +6,7 @@ import AdicionarPlanta from '../pages/Planta/AdicionarPlanta';
 import Planta from '../pages/Planta/Planta';
 import BotaoBot from './BotaoBot';
 import Config from '../pages/Config/Config';
-
+import Dispositivo from '../pages/Dispositivo/Dispositivo';
 
 
 const Tab = createBottomTabNavigator();
@@ -78,11 +78,11 @@ const Tabs = () => {
                     />
                     ),
                 tabBarButton: () => (
-                    <BotaoBot />
+                    <BotaoBot/>
                 ),
                     
         }} />
-        <Tab.Screen name="Planta" component={Planta} options={{tabBarIcon: ({focused})=> (
+        <Tab.Screen name="Dispositivo" component={Dispositivo} options={{tabBarIcon: ({focused})=> (
             <View>
                 <Image
                     source={require('../assets/dispositivo.png')}

@@ -1,21 +1,20 @@
 import { Pressable, Text, TouchableHighlight, View, Image } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import base64 from "react-native-base64";
 import { Audio } from "expo-av";
 import * as Speech from 'expo-speech';
-
 const { CHATBOT_KEY } = process.env;
 const key = CHATBOT_KEY;
 const encodedKey = base64.encode(`apikey:${key}`);
-
 const BotaoBot = () => {
   const [message, setMessage] = useState("")
   const [chatMessage, setChatMessage] = useState([]);
   const [permission, setPermission] = React.useState("");
   const [recording, setRecording] = React.useState("");
   let [context, setContext] = useState("");
+  const [cor, setCor] = useState("#32A060");
+
   const sendMessage = (messageUser) => {
     axios
       .post(
@@ -44,12 +43,12 @@ const BotaoBot = () => {
   useEffect(() => {
     if (chatMessage.length > 1) {
       chatMessage.map(value => {
-        Speech.speak(value, { language: "fr-FR" })
+        Speech.speak(value)
           ;
       })
     } else {
       if (chatMessage[0] != null) {
-        Speech.speak(chatMessage[0], { language: "fr-FR" })
+        Speech.speak(chatMessage[0])
         console.log(chatMessage[0])
       }
     }
@@ -102,6 +101,7 @@ const BotaoBot = () => {
   }
 
   async function startRecording() {
+    
     try {
       const permission = await Audio.requestPermissionsAsync();
       if (permission.status === "granted") {
@@ -126,6 +126,7 @@ const BotaoBot = () => {
   }
 
   async function stopRecording() {
+   
     await recording.stopAndUnloadAsync();
     let resp = recording
     setRecording(undefined)
@@ -141,28 +142,46 @@ const BotaoBot = () => {
       height: 80,
       width: 80,
       backgroundColor: "white",
-    
       bottom: 40,
-      
       borderRadius: 40,
-  
       elevation: 22,
       zIndex: 2,
     }}>
-      <TouchableHighlight
+      <TouchableHighlight 
+      underlayColor="#32A060"
+      tintColor="white"
+      style={{
+        height: 80,
+        width: 80,
+        borderRadius: 40,
+        
+
+      }}
         title={recording ? "Stop Recording" : "Start Recording"}
-        onPress={recording ? stopRecording : startRecording}>
+        onPressIn={() => {
+          startRecording()
+          setCor("white")
+        }} 
+        onPressOut={() =>{
+          stopRecording()
+          setCor("#32A060")
+        }}> 
+          
+        
 
         <Image source={require("../assets/Voice.png")}
           style={{
             height: 35,
             width: 35,
+            top: 20,
             alignSelf: "center",
             justifyContent: "center",
-            tintColor: "#32A060",
+            tintColor: cor,
           }}
         />
       </TouchableHighlight>
+
+    
     </View>
   );
 };
