@@ -25,6 +25,15 @@ export const ROTINAS = [
       image : require("../assets/trash.png"),
 
     },
+    {
+      id: "4",
+      name: "lembrete 3",
+      description:
+        "Trocar a terra das plantas todos os meses",
+      image1 : require("../assets/check.png"),
+      image : require("../assets/trash.png"),
+
+    },
   ];
   
   

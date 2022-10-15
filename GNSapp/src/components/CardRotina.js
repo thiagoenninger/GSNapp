@@ -6,22 +6,23 @@ export function CardPlanta({ data }) {
   return (
     <View
       style={{
-        marginTop: 30,
-        marginBottom: 1,
+        marginTop: 20,
+        marginBottom: 20,
         justifyContent: "center",
-        alignItems: "space-between",
+        itemsCenter: "flex-end",
         flexDirection: "row",
+        
+
       }}
     >
       <View
           style={{
             backgroundColor: "#32A060",
-            width: 340,
-            paddingHorizontal: 20,
-            paddingVertical: 35,
+            width: 330,
+            paddingHorizontal: 10,
+            paddingVertical: 25,
             borderTopRightRadius: 25,
             borderBottomRightRadius: 25,
-            marginRight: 10,
             marginBottom: 5,
           }}
         >
@@ -93,12 +94,19 @@ export function CardPlanta({ data }) {
               fontWeight: "600",
               marginBottom: 20,
               marginTop: 0,
+              marginLeft: 15,
               width: 150,
             }}
           >
             {data.name}
           </Text>
-          <Text style={{ color: "white", fontSize: 14, width: 200}}>
+          <Text style={{ color: "white", 
+          fontSize: 14, 
+          width: 200, 
+          marginBottom: 10,
+          marginLeft: 15,
+          
+        }}>
             {data.description}
           </Text>
         </View>

@@ -13,6 +13,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import styles from "./style";
 import Fundo from "../../assets/fundoCriarConta.png";
+import BotaoBot from "../../components/BotaoBot";
 
 const ListaCadastro = (props) => {
   return (
@@ -129,6 +130,7 @@ export default function CriarConta() {
 
   return (
     <View style={{ flex: 1 }}>
+      
       <ImageBackground source={Fundo} resizeMode="cover" style={{ flex: 1 }}>
         <View style={styles.container}>
           <View style={styles.sectionConta}>
@@ -219,7 +221,14 @@ export default function CriarConta() {
               onDelete={deleteUser}
             />}
           />
+          {/* <View>
+          <BotaoBot style={{
+            position: "absolute",
+            bottom: 0,
+          }}/>
+          </View> */}
           <View style={{flex:1, alignItems:"center", flexDirection:"row", justifyContent:"center"}}>
+            
             <Text style={{color:"#fff", fontSize:16}}>Lista completa de usuários cadastrados </Text>
             <Pressable 
               onPress={
@@ -240,6 +249,8 @@ export default function CriarConta() {
               <Text style={{color:"#32a060", fontSize:16}}>aqui.</Text>
             </Pressable>
           </View>
+            
+            
         </View>
       </ImageBackground>
     </View>

@@ -19,7 +19,7 @@ export function CardPlanta({ data }) {
             backgroundColor: "#32A060",
             width: 260,
             paddingHorizontal: 20,
-            paddingVertical: 30,
+            paddingVertical: 35,
             borderRadius: 25,
             marginRight: 10,
           }}
@@ -39,7 +39,7 @@ export function CardPlanta({ data }) {
           >
             {data.name}
           </Text>
-          <Text style={{ color: "white", fontSize: 14 }}>
+          <Text style={{ color: "white", fontSize: 13 }}>
             {data.description}
           </Text>
         </View>
