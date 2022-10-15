@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     padding: 30,
     width: "100%",
     position: "absolute",
-    bottom: 0,
+    bottom: 40,
     height: 300,
     shadowColor: "#000",
     shadowOffset: {
@@ -128,10 +128,10 @@ const styles = StyleSheet.create({
     alignContent: "center",
     backgroundColor: "#fff",
     width: "35%",
-    height: 100,
+    height: 80,
     borderTopLeftRadius: 20,
     position: "absolute",
-    bottom: 50,
+    bottom: 40,
     right: 0,
   },
 });

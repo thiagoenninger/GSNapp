@@ -4,6 +4,7 @@ import MeuJardim from '../pages/MeuJardim/MeuJardim';
 import Rotinas from '../pages/Rotinas/Rotinas';
 import AdicionarPlanta from '../pages/Planta/AdicionarPlanta';
 import Planta from '../pages/Planta/Planta';
+import Dispositivo from '../pages/Dispositivo/Dispositivo';
 import BotaoBot from './BotaoBot';
 import Config from '../pages/Config/Config';
 import Dispositivo from '../pages/Dispositivo/Dispositivo';
@@ -82,7 +83,7 @@ const Tabs = () => {
                 ),
                     
         }} />
-        <Tab.Screen name="Dispositivo" component={Dispositivo} options={{tabBarIcon: ({focused})=> (
+        <Tab.Screen name="Planta" component={Dispositivo} options={{tabBarIcon: ({focused})=> (
             <View>
                 <Image
                     source={require('../assets/dispositivo.png')}

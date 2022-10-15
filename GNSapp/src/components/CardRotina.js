@@ -22,7 +22,7 @@ export function CardPlanta({ data }) {
             borderTopRightRadius: 25,
             borderBottomRightRadius: 25,
             marginRight: 10,
-            marginBottom: 45,
+            marginBottom: 5,
           }}
         >
           <View style={{ alignSelf: "flex-end", alignItems: "flex-end", flexDirection: "row",  position : "absolute",zIndex: 1}}>
