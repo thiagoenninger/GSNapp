@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   containerPlanta: {
-
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
     height: 160,
     borderRadius: 10,
     alignSelf: "flex-end",
-    top: 300,
+    top: 250,
     right: 20,
     marginRight: 10,
  

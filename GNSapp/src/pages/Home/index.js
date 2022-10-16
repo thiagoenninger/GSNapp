@@ -50,6 +50,7 @@ const Home = (props) => {
             placeholder="Senha"
             placeholderTextColor="#fff"
             underlineColorAndroid="transparent"
+            secureTextEntry={true}
           />
           <Feather name="lock" size={24} color="#fff" style={styles.icons} />
         </View>

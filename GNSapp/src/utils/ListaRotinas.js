@@ -9,7 +9,7 @@ export const ROTINAS = [
     },
     {
       id: "2",
-      name: "lembrete 2",
+      name: "Lembrete 2",
       description:
         "Levar as plantas para o sol todos os dias as 10:00",
     image1 : require("../assets/check.png"),
@@ -18,7 +18,7 @@ export const ROTINAS = [
     },
     {
       id: "3",
-      name: "lembrete 3",
+      name: "Lembrete 3",
       description:
         "Trocar a terra das plantas todos os meses",
       image1 : require("../assets/check.png"),
@@ -27,7 +27,7 @@ export const ROTINAS = [
     },
     {
       id: "4",
-      name: "lembrete 3",
+      name: "Lembrete 4",
       description:
         "Trocar a terra das plantas todos os meses",
       image1 : require("../assets/check.png"),
